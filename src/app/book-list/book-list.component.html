@@ -1,0 +1,16 @@
+<div class="container mt-4">
+  <h2>Book List</h2>
+  <div *ngFor="let book of books" class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">{{ book.name }}</h5>
+      <p class="card-text">Author: {{ book.author }}</p>
+      <p class="card-text">Genre: {{ book.genre }}</p>
+      <p class="card-text">Rate: {{ book.rate }}</p>
+      <p class="card-text">Status: {{ book.status }}</p>
+      <button class="btn btn-danger" (click)="onDeleteBook(book.id)">Delete</button>
+      <button class="btn btn-success" (click)="onUpdateStatus(book, 'Completed')">Mark as Completed</button>
+      <button class="btn btn-primary" (click)="onUpdateStatus(book, 'Reading')">Mark as Reading</button>
+      <button class="btn btn-secondary" (click)="onUpdateStatus(book, 'Waiting')">Mark as Waiting</button>
+    </div>
+  </div>
+</div>
